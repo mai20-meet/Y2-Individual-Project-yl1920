@@ -59,5 +59,9 @@ def reserches():
 def home():
 	return render_template("home.html") 
 
+@app.route('/contect_us')
+def contect_us():
+	return render_template("contect_us.html") 
+
 if __name__ == '__main__':
 	app.run(debug=True, threaded=False)
