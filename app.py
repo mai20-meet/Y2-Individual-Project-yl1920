@@ -5,6 +5,9 @@ from database import *
 app = Flask(__name__)
 app.secret_key = "MY_SUPER_SECRET_KEY"
 
+@app.route('/')
+def index():
+	return render_template("home.html") 
 
 @app.route('/way_to_love')
 def way_to_love():
@@ -20,6 +23,7 @@ def story():
 		return render_template('my_story.html')
 	else:
 		name = request.form['name']
+	
 		time = request.form['time']
 		title = request.form['title']
 		story = request.form['story']
